@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社M-STAGE｜総合内装仕上げ業｜埼玉・関東一円</title>
+<meta name="description" content="株式会社M-STAGE（埼玉県さいたま市桜区）は、軽量鉄骨下地・ボード貼り・天井仕上げから内装一式まで対応する総合内装仕上げ業です。大手ゼネコンから店舗工事まで、確かな技術で空間を仕上げます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E2231A;
+    --red-d:#b81b13;
+    --black:#101010;
+    --ink:#161616;
+    --panel:#1c1c1c;
+    --line:#2c2c2c;
+    --gray:#8a8a8a;
+    --light:#f4f4f4;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .en{font-family:"Oswald",sans-serif;letter-spacing:.04em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:90%;max-width:1140px;margin:0 auto}
+  section{position:relative}
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:100;
+    background:rgba(16,16,16,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid #000;
+    transition:background .3s;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:42px;width:auto;background:#fff;padding:5px 7px;border-radius:7px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+  .brand .bfallback{
+    font-family:"Oswald",sans-serif;font-weight:700;font-size:24px;color:#fff;
+    letter-spacing:.05em;display:none;
+  }
+  .brand .bfallback b{color:var(--red)}
+  .gnav{display:flex;align-items:center;gap:28px}
+  .gnav a{color:#e8e8e8;font-size:14px;font-weight:500;transition:color .2s}
+  .gnav a:hover{color:var(--red)}
+  .tel-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--red);color:#fff;font-weight:700;
+    padding:10px 18px;border-radius:4px;font-size:14px;
+    transition:background .2s;
+  }
+  .tel-btn:hover{background:var(--red-d)}
+  .tel-btn .en{font-size:16px}
+  .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .menu-toggle span{width:26px;height:2px;background:#fff;transition:.3s}
+
+  /* ===== Hero ===== */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    background:linear-gradient(rgba(10,10,10,.62),rgba(10,10,10,.72)),
+               #161616 url('images/hero.jpg') center/cover no-repeat;
+    color:#fff;padding:120px 0 80px;
+  }
+  .hero .wrap{position:relative;z-index:2}
+  .hero .kicker{
+    display:inline-block;color:#fff;font-weight:700;font-size:13px;
+    letter-spacing:.18em;border-left:4px solid var(--red);padding-left:12px;margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,6vw,4.2rem);font-weight:900;line-height:1.25;
+    letter-spacing:.02em;text-shadow:0 2px 24px rgba(0,0,0,.5);
+  }
+  .hero h1 .accent{color:var(--red)}
+  .hero p.lead{margin-top:26px;font-size:clamp(1rem,2.2vw,1.2rem);max-width:640px;color:#e6e6e6}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:5px;
+    font-weight:700;font-size:15px;transition:.25s;border:2px solid transparent;
+  }
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+  .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{background:#fff;color:var(--black)}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#bbb;font-size:11px;letter-spacing:.2em;z-index:2}
+  .scroll-hint::after{content:"";display:block;width:1px;height:40px;background:linear-gradient(var(--red),transparent);margin:10px auto 0}
+
+  /* ===== Section heading ===== */
+  .sec{padding:96px 0}
+  .sec-head{margin-bottom:54px}
+  .sec-head .en-label{display:block;color:var(--red);font-weight:700;font-size:14px;letter-spacing:.16em;margin-bottom:8px}
+  .sec-head h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;letter-spacing:.03em;line-height:1.3}
+  .sec-head h2 .bar{color:var(--red)}
+  .sec-dark{background:var(--black);color:#f1f1f1}
+  .sec-dark .sec-head h2{color:#fff}
+
+  /* ===== Services ===== */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:34px 28px;
+    transition:.3s;position:relative;overflow:hidden;
+  }
+  .svc::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+  .svc:hover{transform:translateY(-6px);border-color:var(--red)}
+  .svc:hover::before{transform:scaleY(1)}
+  .svc .num{font-family:"Oswald",sans-serif;font-size:13px;color:var(--red);font-weight:700;letter-spacing:.1em}
+  .svc h3{font-size:1.25rem;font-weight:700;margin:10px 0 12px;color:#fff}
+  .svc p{font-size:.92rem;color:#bdbdbd;line-height:1.85}
+
+  /* ===== Strengths ===== */
+  .str-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:10px}
+  .str{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid #eaeaea;border-radius:8px;padding:28px;box-shadow:0 6px 24px rgba(0,0,0,.04)}
+  .str .ico{flex:0 0 56px;height:56px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Oswald";font-weight:700;font-size:22px}
+  .str h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+  .str p{font-size:.92rem;color:#555}
+
+  /* ===== Stats band ===== */
+  .stats{background:var(--red);color:#fff;padding:54px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat .num{font-family:"Oswald";font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1}
+  .stat .lbl{font-size:.9rem;margin-top:8px;opacity:.92}
+
+  /* ===== Gallery ===== */
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:14px}
+  .gal figure{position:relative;overflow:hidden;border-radius:6px;background:#222}
+  .gal figure.tall{grid-row:span 2}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .gal figure:hover img{transform:scale(1.07)}
+  .gal figcaption{position:absolute;left:0;bottom:0;width:100%;padding:14px 16px;color:#fff;font-size:.85rem;font-weight:500;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+
+  /* ===== Company table ===== */
+  .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .area-tags span{background:#fff;border:1px solid #ddd;border-radius:20px;padding:6px 16px;font-size:.85rem;font-weight:500}
+  .info{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e7e7e7;border-radius:8px;overflow:hidden}
+  .info th,.info td{text-align:left;padding:18px 22px;border-bottom:1px solid #eee;font-size:.95rem;vertical-align:top}
+  .info th{width:32%;background:#fafafa;font-weight:700;color:#222}
+  .info tr:last-child th,.info tr:last-child td{border-bottom:0}
+  .map-wrap{margin-top:18px;border-radius:8px;overflow:hidden;border:1px solid #e7e7e7}
+  .map-wrap iframe{width:100%;height:340px;border:0;display:block}
+
+  /* ===== Message ===== */
+  .msg{display:grid;grid-template-columns:1fr 1.3fr;gap:46px;align-items:center}
+  .msg .ph{background:#222 url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1000&q=80') center/cover;border-radius:10px;min-height:360px;position:relative}
+  .msg .ph::after{content:"REPRESENTATIVE";position:absolute;left:18px;bottom:14px;color:rgba(255,255,255,.85);font-family:"Oswald";font-size:12px;letter-spacing:.2em}
+  .msg blockquote{font-size:1.05rem;line-height:2;color:#eee;font-weight:500}
+  .msg .sign{margin-top:24px;font-size:.95rem;color:#bbb}
+  .msg .sign b{display:block;color:#fff;font-size:1.2rem;font-weight:700;margin-top:4px}
+
+  /* ===== Contact ===== */
+  .contact{background:var(--ink);color:#fff;text-align:center}
+  .contact h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;margin-bottom:14px}
+  .contact .sub{color:#bbb;margin-bottom:40px}
+  .contact-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:820px;margin:0 auto}
+  .ccard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:38px 26px}
+  .ccard .cl{font-size:.8rem;letter-spacing:.16em;color:var(--red);font-weight:700;margin-bottom:14px}
+  .ccard .big{font-family:"Oswald";font-weight:700;font-size:clamp(1.7rem,4.5vw,2.4rem);color:#fff;line-height:1.2}
+  .ccard .note{font-size:.85rem;color:#9a9a9a;margin-top:12px}
+  .ccard a.big:hover{color:var(--red)}
+
+  /* ===== Footer ===== */
+  footer{background:#0a0a0a;color:#999;padding:48px 0 28px}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+  .foot .fbrand{display:flex;align-items:center;gap:12px}
+  .foot .fbrand img{height:48px;background:#fff;padding:6px 9px;border-radius:8px}
+  .foot .fbrand .ft{font-family:"Oswald";color:#fff;font-weight:700;font-size:18px}
+  .foot .faddr{font-size:.85rem;line-height:1.7}
+  .copy{text-align:center;margin-top:34px;padding-top:20px;border-top:1px solid #1d1d1d;font-size:.78rem;color:#666;letter-spacing:.05em}
+
+  /* ===== fadeUp ===== */
+  .fadeUp{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+  .fadeUp.in{opacity:1;transform:none}
+  .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+  /* ===== Responsive ===== */
+  @media(max-width:880px){
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+    .msg{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:34px 24px}
+    .menu-toggle{display:flex}
+    .gnav{
+      position:fixed;top:72px;right:0;width:74%;max-width:320px;height:calc(100vh - 72px);
+      background:rgba(12,12,12,.98);flex-direction:column;align-items:flex-start;gap:0;
+      padding:24px 28px;transform:translateX(100%);transition:transform .3s;
+    }
+    .gnav.open{transform:none}
+    .gnav a{width:100%;padding:16px 0;border-bottom:1px solid #222;font-size:16px}
+    .gnav .tel-btn{margin-top:18px}
+  }
+  @media(max-width:560px){
+    .svc-grid{grid-template-columns:1fr}
+    .str-grid{grid-template-columns:1fr}
+    .contact-cards{grid-template-columns:1fr}
+    .gal{grid-template-columns:1fr;grid-auto-rows:200px}
+    .gal figure.tall{grid-row:span 1}
+    .info th{width:38%;padding:14px}
+    .info td{padding:14px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="images/logo.png" alt="株式会社M-STAGE" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="bfallback">M-<b>STAGE</b></span>
+    </a>
+    <nav class="gnav" id="gnav">
+      <a href="#services">事業内容</a>
+      <a href="#strength">選ばれる理由</a>
+      <a href="#works">施工イメージ</a>
+      <a href="#company">会社概要</a>
+      <a href="tel:048-861-0529" class="tel-btn"><span class="en">TEL</span> 048-861-0529</a>
+    </nav>
+    <button class="menu-toggle" id="mtoggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="kicker">埼玉・関東一円｜総合内装仕上げ業</span>
+    <h1>確かな技術で、<br>空間を<span class="accent">仕上げる</span>。</h1>
+    <p class="lead">軽量鉄骨下地（LGS）・ボード貼り・天井仕上げから内装一式まで。大手ゼネコンの現場から店舗工事まで、一棟まるごとお任せいただける総合内装仕上げ業です。</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-red">お問い合わせ</a>
+      <a href="#services" class="btn btn-ghost">事業内容を見る</a>
+    </div>
+  </div>
+  <div class="scroll-hint en">SCROLL</div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="sec sec-dark" id="services">
+  <div class="wrap">
+    <div class="sec-head fadeUp">
+      <span class="en-label">SERVICES</span>
+      <h2>事業<span class="bar">内容</span></h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc fadeUp d1">
+        <span class="num en">01</span>
+        <h3>軽量鉄骨下地工事<br>（LGS）</h3>
+        <p>軽鉄ボードを主力とした下地組み。間仕切り壁・天井下地まで、精度の高い施工で建物の骨格をつくります。</p>
+      </div>
+      <div class="svc fadeUp d2">
+        <span class="num en">02</span>
+        <h3>ボード貼り工事</h3>
+        <p>石膏ボード（PB）の張り込みを高品質で。下地から仕上げ前まで、美しい平滑面を実現します。</p>
+      </div>
+      <div class="svc fadeUp d3">
+        <span class="num en">03</span>
+        <h3>天井仕上げ工事</h3>
+        <p>システム天井・在来天井の施工に対応。オフィス・店舗・施設まで幅広い天井仕上げを手がけます。</p>
+      </div>
+      <div class="svc fadeUp d1">
+        <span class="num en">04</span>
+        <h3>壁張り・間仕切り工事</h3>
+        <p>クロス下地・各種ボードの壁張りから間仕切り設置まで。空間を機能的に区切ります。</p>
+      </div>
+      <div class="svc fadeUp d2">
+        <span class="num en">05</span>
+        <h3>内装一式工事</h3>
+        <p>下地から仕上げまで内装をトータルにコーディネート。協力会社と連携し一式でお引き受けします。</p>
+      </div>
+      <div class="svc fadeUp d3">
+        <span class="num en">06</span>
+        <h3>店舗・テナント工事</h3>
+        <p>飲食店・物販店・オフィスなど、店舗の内装仕上げに対応。スケジュールと品質を両立します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats band ===== -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat fadeUp d1"><div class="num">関東<br>1都6県</div><div class="lbl">対応エリア</div></div>
+    <div class="stat fadeUp d2"><div class="num">有資格者<br>多数</div><div class="lbl">内装仕上げ技能士 在籍</div></div>
+    <div class="stat fadeUp d3"><div class="num">ゼネコン<br>〜町場</div><div class="lbl">幅広い現場に対応</div></div>
+    <div class="stat fadeUp d4"><div class="num">許可<br>取得済</div><div class="lbl">建設業許可・各種保険完備</div></div>
+  </div>
+</section>
+
+<!-- ===== Strengths ===== -->
+<section class="sec" id="strength">
+  <div class="wrap">
+    <div class="sec-head fadeUp">
+      <span class="en-label">OUR STRENGTH</span>
+      <h2>選ばれる<span class="bar">理由</span></h2>
+    </div>
+    <div class="str-grid">
+      <div class="str fadeUp d1">
+        <div class="ico en">01</div>
+        <div><h3>確かな技術力と有資格者</h3><p>内装仕上げ技能士（一級含む）をはじめ、経験豊富な職人が多数在籍。軽鉄ボードを知り尽くしたプロが施工します。</p></div>
+      </div>
+      <div class="str fadeUp d2">
+        <div class="ico en">02</div>
+        <div><h3>大手ゼネコンから町場まで</h3><p>大規模現場から地域の店舗工事まで、規模を問わず対応。豊富な実績で培った段取り力でスムーズに進めます。</p></div>
+      </div>
+      <div class="str fadeUp d3">
+        <div class="ico en">03</div>
+        <div><h3>内装一式でまるごと対応</h3><p>多くの協力会社との連携により、下地から仕上げまで内装一式をワンストップでお引き受けします。</p></div>
+      </div>
+      <div class="str fadeUp d4">
+        <div class="ico en">04</div>
+        <div><h3>安心の体制</h3><p>建設業許可を取得し、社会保険・労災保険・インボイスにも対応。法人として責任を持って施工にあたります。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Gallery ===== -->
+<section class="sec sec-dark" id="works">
+  <div class="wrap">
+    <div class="sec-head fadeUp">
+      <span class="en-label">WORKS IMAGE</span>
+      <h2>施工<span class="bar">イメージ</span></h2>
+    </div>
+    <div class="gal">
+      <figure class="tall fadeUp d1">
+        <img src="images/hero.jpg" alt="内装仕上げ施工の様子" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80'">
+        <figcaption>軽量鉄骨下地・断熱施工</figcaption>
+      </figure>
+      <figure class="fadeUp d2">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80" alt="内装工事" loading="lazy">
+        <figcaption>ボード・間仕切り工事</figcaption>
+      </figure>
+      <figure class="fadeUp d3">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80" alt="建築現場" loading="lazy">
+        <figcaption>大型現場の内装施工</figcaption>
+      </figure>
+      <figure class="fadeUp d2">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80" alt="オフィス内装" loading="lazy">
+        <figcaption>オフィス内装仕上げ</figcaption>
+      </figure>
+      <figure class="tall fadeUp d3">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80" alt="店舗内装" loading="lazy">
+        <figcaption>店舗・テナント工事</figcaption>
+      </figure>
+      <figure class="fadeUp d4">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900&q=80" alt="職人の作業" loading="lazy">
+        <figcaption>熟練の職人による施工</figcaption>
+      </figure>
+    </div>
+    <p style="margin-top:22px;font-size:.82rem;color:#888">※ 一部の写真はイメージです。施工事例は順次掲載予定です。</p>
+  </div>
+</section>
+
+<!-- ===== Message ===== -->
+<section class="sec sec-dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="msg fadeUp">
+      <div class="ph"></div>
+      <div>
+        <span class="en-label" style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:14px;display:block;margin-bottom:10px">MESSAGE</span>
+        <h2 style="color:#fff;font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:900;margin-bottom:22px;line-height:1.4">仕事には、自信を持っています。</h2>
+        <blockquote>中学卒業から軽鉄ボード一筋。職人として現場で腕を磨き、個人事業を経て、このたび株式会社M-STAGEとして新たなステージへ。<br>培ってきた技術と段取り力で、一つひとつの空間を丁寧に仕上げます。内装のことなら、まずはお気軽にご相談ください。</blockquote>
+        <div class="sign">代表取締役<b>藤澤 正貴</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Company ===== -->
+<section class="sec" id="company">
+  <div class="wrap">
+    <div class="sec-head fadeUp">
+      <span class="en-label">COMPANY</span>
+      <h2>会社<span class="bar">概要</span></h2>
+    </div>
+    <table class="info fadeUp d1">
+      <tr><th>社名</th><td>株式会社M-STAGE</td></tr>
+      <tr><th>代表取締役</th><td>藤澤 正貴</td></tr>
+      <tr><th>所在地</th><td>〒338-0837<br>埼玉県さいたま市桜区田島2-2-20</td></tr>
+      <tr><th>電話番号</th><td>048-861-0529（代表）／ 080-7431-0905</td></tr>
+      <tr><th>事業内容</th><td>総合内装仕上げ業<br>軽量鉄骨下地工事（LGS）・ボード貼り工事・天井仕上げ工事・壁張り／間仕切り工事・内装一式工事・店舗工事</td></tr>
+      <tr><th>対応工事種別</th><td>天井仕上工事 ／ 壁張り工事 ／ 内装間仕切り工事 ／ 内装工事 ／ 軽量ボード工事（LGS・PB）</td></tr>
+      <tr><th>対応エリア</th><td>
+        関東一円（茨城県・栃木県・群馬県・埼玉県・千葉県・東京都・神奈川県）
+        <div class="area-tags"><span>埼玉</span><span>東京</span><span>神奈川</span><span>千葉</span><span>茨城</span><span>栃木</span><span>群馬</span></div>
+      </td></tr>
+      <tr><th>許可・登録</th><td>建設業許可 ／ 社会保険 ／ 労災保険 ／ インボイス登録</td></tr>
+    </table>
+    <div class="map-wrap fadeUp d2">
+      <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E6%A1%9C%E5%8C%BA%E7%94%B0%E5%B3%B62-2-20&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="fadeUp">
+      <span class="en-label" style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:14px;display:block;margin-bottom:10px">CONTACT</span>
+      <h2>お問い合わせ</h2>
+      <p class="sub">内装工事のご依頼・お見積り・協力会社のご相談など、お気軽にご連絡ください。</p>
+    </div>
+    <div class="contact-cards">
+      <div class="ccard fadeUp d1">
+        <div class="cl en">TEL（代表）</div>
+        <a href="tel:048-861-0529" class="big">048-861-0529</a>
+        <div class="note">受付時間：平日 8:00〜18:00</div>
+      </div>
+      <div class="ccard fadeUp d2">
+        <div class="cl en">MOBILE</div>
+        <a href="tel:080-7431-0905" class="big">080-7431-0905</a>
+        <div class="note">担当：代表 藤澤</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap foot">
+    <div class="fbrand">
+      <img src="images/logo.png" alt="株式会社M-STAGE" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+      <span class="ft" style="display:none">M-STAGE</span>
+    </div>
+    <div class="faddr">
+      〒338-0837 埼玉県さいたま市桜区田島2-2-20<br>
+      TEL 048-861-0529 ／ 080-7431-0905
+    </div>
+  </div>
+  <div class="wrap copy">© 株式会社M-STAGE All Rights Reserved.</div>
+</footer>
+
+<script>
+  // mobile menu
+  var t=document.getElementById('mtoggle'),g=document.getElementById('gnav');
+  t.addEventListener('click',function(){g.classList.toggle('open')});
+  g.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){g.classList.remove('open')})});
+
+  // fadeUp on scroll
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.15});
+  document.querySelectorAll('.fadeUp').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
