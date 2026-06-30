@@ -74,6 +74,12 @@
     color:#fff;padding:120px 0 80px;
   }
   .hero .wrap{position:relative;z-index:2}
+  .hero-logo{
+    height:128px;width:auto;background:#fff;padding:16px 22px;border-radius:14px;
+    box-shadow:0 14px 40px rgba(0,0,0,.45);margin-bottom:30px;
+    animation:logoIn 1s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes logoIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
   .hero .kicker{
     display:inline-block;color:#fff;font-weight:700;font-size:13px;
     letter-spacing:.18em;border-left:4px solid var(--red);padding-left:12px;margin-bottom:26px;
@@ -135,6 +141,7 @@
   .gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:14px}
   .gal figure{position:relative;overflow:hidden;border-radius:6px;background:#222}
   .gal figure.tall{grid-row:span 2}
+  .gal figure.feature{grid-column:span 2;grid-row:span 2}
   .gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
   .gal figure:hover img{transform:scale(1.07)}
   .gal figcaption{position:absolute;left:0;bottom:0;width:100%;padding:14px 16px;color:#fff;font-size:.85rem;font-weight:500;background:linear-gradient(transparent,rgba(0,0,0,.75))}
@@ -151,8 +158,8 @@
 
   /* ===== Message ===== */
   .msg{display:grid;grid-template-columns:1fr 1.3fr;gap:46px;align-items:center}
-  .msg .ph{background:#222 url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1000&q=80') center/cover;border-radius:10px;min-height:360px;position:relative}
-  .msg .ph::after{content:"REPRESENTATIVE";position:absolute;left:18px;bottom:14px;color:rgba(255,255,255,.85);font-family:"Oswald";font-size:12px;letter-spacing:.2em}
+  .msg .ph{background:#222 url('images/代表取締役message.jpg') center/cover;border-radius:10px;min-height:420px;position:relative}
+  .msg .ph::after{content:"REPRESENTATIVE";position:absolute;left:18px;bottom:14px;color:rgba(255,255,255,.9);font-family:"Oswald";font-size:12px;letter-spacing:.2em;text-shadow:0 1px 6px rgba(0,0,0,.6)}
   .msg blockquote{font-size:1.05rem;line-height:2;color:#eee;font-weight:500}
   .msg .sign{margin-top:24px;font-size:.95rem;color:#bbb}
   .msg .sign b{display:block;color:#fff;font-size:1.2rem;font-weight:700;margin-top:4px}
@@ -186,6 +193,8 @@
   @media(max-width:880px){
     .svc-grid{grid-template-columns:1fr 1fr}
     .gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+    .gal figure.tall{grid-row:span 1}
+    .gal figure.feature{grid-column:span 2;grid-row:span 2}
     .msg{grid-template-columns:1fr}
     .stats-grid{grid-template-columns:1fr 1fr;gap:34px 24px}
     .menu-toggle{display:flex}
@@ -199,11 +208,13 @@
     .gnav .tel-btn{margin-top:18px}
   }
   @media(max-width:560px){
+    .hero-logo{height:96px;padding:12px 16px;border-radius:11px}
     .svc-grid{grid-template-columns:1fr}
     .str-grid{grid-template-columns:1fr}
     .contact-cards{grid-template-columns:1fr}
     .gal{grid-template-columns:1fr;grid-auto-rows:200px}
     .gal figure.tall{grid-row:span 1}
+    .gal figure.feature{grid-column:span 1;grid-row:span 2}
     .info th{width:38%;padding:14px}
     .info td{padding:14px}
   }
@@ -232,6 +243,7 @@
 <!-- ===== Hero ===== -->
 <section class="hero" id="top">
   <div class="wrap">
+    <img class="hero-logo" src="images/logo.png" alt="株式会社M-STAGE">
     <span class="kicker">埼玉・関東一円｜総合内装仕上げ業</span>
     <h1>確かな技術で、<br>空間を<span class="accent">仕上げる</span>。</h1>
     <p class="lead">軽量鉄骨下地（LGS）・ボード貼り・天井仕上げから内装一式まで。大手ゼネコンの現場から店舗工事まで、一棟まるごとお任せいただける総合内装仕上げ業です。</p>
@@ -331,29 +343,25 @@
       <h2>施工<span class="bar">イメージ</span></h2>
     </div>
     <div class="gal">
-      <figure class="tall fadeUp d1">
-        <img src="images/hero.jpg" alt="内装仕上げ施工の様子" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80'">
+      <figure class="feature fadeUp d1">
+        <img src="images/ボード貼り工事.jpg" alt="ボード貼り・天井仕上げ工事" loading="lazy">
+        <figcaption>ボード貼り・天井仕上げ工事</figcaption>
+      </figure>
+      <figure class="tall fadeUp d2">
+        <img src="images/hero.jpg" alt="軽量鉄骨下地・断熱施工の様子" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80'">
         <figcaption>軽量鉄骨下地・断熱施工</figcaption>
       </figure>
-      <figure class="fadeUp d2">
-        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80" alt="内装工事" loading="lazy">
-        <figcaption>ボード・間仕切り工事</figcaption>
-      </figure>
       <figure class="fadeUp d3">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80" alt="建築現場" loading="lazy">
-        <figcaption>大型現場の内装施工</figcaption>
+        <img src="images/軽量鉄骨下地工事.jpg" alt="軽量鉄骨下地工事（LGS）" loading="lazy">
+        <figcaption>軽量鉄骨下地工事（LGS）</figcaption>
       </figure>
       <figure class="fadeUp d2">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80" alt="オフィス内装" loading="lazy">
         <figcaption>オフィス内装仕上げ</figcaption>
       </figure>
-      <figure class="tall fadeUp d3">
+      <figure class="fadeUp d3">
         <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80" alt="店舗内装" loading="lazy">
         <figcaption>店舗・テナント工事</figcaption>
-      </figure>
-      <figure class="fadeUp d4">
-        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900&q=80" alt="職人の作業" loading="lazy">
-        <figcaption>熟練の職人による施工</figcaption>
       </figure>
     </div>
     <p style="margin-top:22px;font-size:.82rem;color:#888">※ 一部の写真はイメージです。施工事例は順次掲載予定です。</p>
